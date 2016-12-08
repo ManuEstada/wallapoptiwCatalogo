@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 
 
+
 @Entity
 @Table(name="PRODUCTOS")
 public class Producto implements Serializable{
@@ -68,9 +69,7 @@ private static final long serialVersionUID = 1L;
 	private String precio;
 	@Column(nullable = false, length = 30)
 	private String estado;
-	/*@Lob
-	@Column (name= "imagen")
-	private byte[] imagen;*/
+	
 
 	/*@ManyToOne(optional=false)
 	@JoinColumn(name="clienteID", nullable=false)
@@ -88,6 +87,7 @@ private static final long serialVersionUID = 1L;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.estado = estado;
+		
 		//this.duenoProducto = duenoProducto;
 	}
 
@@ -138,5 +138,6 @@ private static final long serialVersionUID = 1L;
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
 
 }
