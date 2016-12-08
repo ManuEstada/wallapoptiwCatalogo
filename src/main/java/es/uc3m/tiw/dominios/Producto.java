@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -69,24 +71,30 @@ private static final long serialVersionUID = 1L;
 	private String precio;
 	@Column(nullable = false, length = 30)
 	private String estado;
+	@Column(nullable = false)
+	private long clienteID;
 	
+	
+	public long getClienteID() {
+		return clienteID;
+	}
 
-	/*@ManyToOne(optional=false)
-	@JoinColumn(name="clienteID", nullable=false)
-	private clienteDominio duenoProducto;*/
-	
-	
+	public void setClienteID(long clienteID) {
+		this.clienteID = clienteID;
+	}
+
 	public Producto() {
 		super();
 	}
 
-	public Producto(String titulo, String categoria, String descripcion, String precio, String estado) {
+	public Producto(String titulo, String categoria, String descripcion, String precio, String estado, long clienteID) {
 		super();
 		this.titulo = titulo;
 		this.categoria = categoria;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.estado = estado;
+		this.clienteID = clienteID;
 		
 		//this.duenoProducto = duenoProducto;
 	}
