@@ -85,4 +85,10 @@ public class CatalogoController {
 		repository.saveAndFlush(producto);
 		return true;
 	}
+
+	@RequestMapping(value="/eliminar", method=RequestMethod.POST)
+	public boolean eliminar(@RequestBody long id){
+		repository.delete(id);
+		return true;
+	}
 }

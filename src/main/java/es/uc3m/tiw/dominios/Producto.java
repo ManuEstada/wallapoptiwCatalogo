@@ -75,7 +75,7 @@ private static final long serialVersionUID = 1L;
 	@Column(nullable = false)
 	private long clienteID;
 	@Lob
-	@Column(nullable=false, columnDefinition="mediumblob")
+	@Column(nullable=true, columnDefinition="mediumblob")
 	private byte[] image;
 	
 	public Producto(String titulo, String categoria, String descripcion, String precio, String estado, long clienteID,

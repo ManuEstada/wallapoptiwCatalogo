@@ -27,12 +27,12 @@ public class WallapoptiwCatalogoApplication {
 		
 		
 		
-		File file1 = new File("images/cajones.jpg");
-		File file2 = new File("images/bici.jpg");
-		File file3 = new File("images/sofa.jpg");
-		File file4 = new File("images/iphone.JPG");
-		File file5 = new File("images/bolso.jpg");
-		File file6 = new File("images/cachimba.jpg");
+		File file1 = new File("src/main/resources/static/images/cajones.jpg");
+		File file2 = new File("src/main/resources/static/images/bici.jpg");
+		File file3 = new File("src/main/resources/static/images/sofa.jpg");
+		File file4 = new File("src/main/resources/static/images/iphone.JPG");
+		File file5 = new File("src/main/resources/static/images/bolso.jpg");
+		File file6 = new File("src/main/resources/static/images/cachimba.jpg");
 		
 		byte[] File1 = new byte[(int) file1.length()];
 		byte[] File2 = new byte[(int) file2.length()];
