@@ -8,8 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 
@@ -19,6 +18,8 @@ import javax.persistence.Table;
 @Table(name="PRODUCTOS")
 public class Producto implements Serializable{
 	
+
+
 private static final long serialVersionUID = 1L;
 	
 
@@ -73,7 +74,21 @@ private static final long serialVersionUID = 1L;
 	private String estado;
 	@Column(nullable = false)
 	private long clienteID;
+	@Lob
+	@Column(nullable=false, columnDefinition="mediumblob")
+	private byte[] image;
 	
+	public Producto(String titulo, String categoria, String descripcion, String precio, String estado, long clienteID,
+			byte[] image) {
+		super();
+		this.titulo = titulo;
+		this.categoria = categoria;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.estado = estado;
+		this.clienteID = clienteID;
+		this.image = image;
+	}
 	
 	public long getClienteID() {
 		return clienteID;
@@ -85,18 +100,6 @@ private static final long serialVersionUID = 1L;
 
 	public Producto() {
 		super();
-	}
-
-	public Producto(String titulo, String categoria, String descripcion, String precio, String estado, long clienteID) {
-		super();
-		this.titulo = titulo;
-		this.categoria = categoria;
-		this.descripcion = descripcion;
-		this.precio = precio;
-		this.estado = estado;
-		this.clienteID = clienteID;
-		
-		//this.duenoProducto = duenoProducto;
 	}
 
 	public long getId() {
@@ -145,6 +148,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 
